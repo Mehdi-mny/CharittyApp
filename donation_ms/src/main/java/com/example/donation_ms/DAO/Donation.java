@@ -1,26 +1,27 @@
-package com.example.organisation_ms.entites;
+package com.example.donation_ms.DAO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Entity
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Organisation {
+@NoArgsConstructor
+@Data
+public class Donation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String address;
-    private String contact;
-}
 
+    private Long userId;
+    private String fullName;
+
+    private Long organisationId;
+    private String organisationName;
+
+    private Double amount;
+}
