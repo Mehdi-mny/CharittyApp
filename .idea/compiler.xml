@@ -9,7 +9,6 @@
         <module name="ms_config" />
         <module name="donation_ms" />
         <module name="discovery_ms" />
-        <module name="users_ms" />
         <module name="gateway_service" />
       </profile>
     </annotationProcessing>
@@ -18,6 +17,7 @@
       <module name="gateway_service (2)" target="17" />
       <module name="ms-config" target="17" />
       <module name="organisation_ms" target="17" />
+      <module name="users_ms" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
