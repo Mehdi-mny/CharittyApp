@@ -16,6 +16,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/ms-config/pom.xml" />
+        <option value="$PROJECT_DIR$/organisation_ms/pom.xml" />
       </set>
     </option>
   </component>
