@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+
 public class OrganisationMsApplication implements CommandLineRunner {
     @Autowired
     private OrganisationRepo orgrepo;

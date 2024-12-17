@@ -33,7 +33,7 @@ public class OrganisationServiceImpl implements OrganisationService{
     }
 
     @Override
-    public Optional<Organisation> findOrganisationById(Long id) {
-        return organisationRepo.findById(id);
+    public Organisation findOrganisationById(Long id) {
+        return organisationRepo.findById(id).get();
     }
 }

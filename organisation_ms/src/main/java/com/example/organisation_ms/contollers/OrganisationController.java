@@ -3,6 +3,7 @@ package com.example.organisation_ms.contollers;
 import com.example.organisation_ms.entites.Organisation;
 import com.example.organisation_ms.services.OrganisationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,8 +21,8 @@ public class OrganisationController {
         return orgInterface.getAllOrganisations();
     }
 
-    @RequestMapping("/getOrganisationById")
-    public Optional<Organisation> getOrganisation(Long id){
+    @RequestMapping("/getOrganisationById/{id}")
+    public Organisation getOrganisation(@PathVariable Long id){
         return orgInterface.findOrganisationById(id);
     }
 
