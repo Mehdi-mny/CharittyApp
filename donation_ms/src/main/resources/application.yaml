@@ -1,0 +1,25 @@
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        register-health-indicator: true
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 10
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+    instances:
+      orgRest:
+        base-config: default
+      usrRest:
+        base-config: default
+
+  retry:
+    configs:
+      default:
+        max-attempts: 3
+        wait-duration: 1s
+    instances:
+      orgRest:
+        base-config: default
+      usrRest:
+        base-config: default

@@ -6,21 +6,12 @@ import com.example.donation_ms.DAO.UserModel;
 import com.example.donation_ms.Repository.DonationRepository;
 import com.example.donation_ms.Service.OrganisationModelRestClient;
 import com.example.donation_ms.Service.UserModelRestClient;
-import jakarta.jms.ConnectionFactory;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.context.annotation.Bean;
-import org.springframework.jms.annotation.EnableJms;
-import org.springframework.jms.annotation.JmsListener;
-import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
-import org.springframework.jms.config.JmsListenerContainerFactory;
 
-import java.util.logging.Logger;
 
 @SpringBootApplication
 @EnableFeignClients
@@ -55,8 +46,8 @@ public class DonationMsApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        UserModel user = usrRest.getUserById(1);
-        OrganisationModel orga = orgRest.getOrganisationById(2);
+        UserModel user = usrRest.getUserById(1L);
+        OrganisationModel orga = orgRest.getOrganisationById(1L);
         Donation donation = donationRepo.save(Donation.builder()
                 .userId(user.getId())
                 .organisationId(orga.getId())
